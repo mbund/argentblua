@@ -4,7 +4,7 @@ With Fedora Silverblue, we can cleanly separate a powerful immutable operating s
 
 ## Usage
 
-Rebase a normal installation of [Fedora Silverblue](https://silverblue.fedoraproject.org) and you will automatically keep up-to-date.
+Rebase a normal installation of [Fedora Silverblue](https://silverblue.fedoraproject.org). It will check for updates every hour, and will apply them the next time you reboot.
 
 ```
 sudo rpm-ostree rebase --experimental ostree-unverified-registry:ghcr.io/mbund/argentblua:latest
