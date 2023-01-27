@@ -2,7 +2,7 @@ name: build-argentblua
 on:
   pull_request:
   schedule:
-    - cron: '0 4 * * *' # 4am daily
+    - cron: '0 8 * * *' # daily at 8:00 (UTC)
   push:
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
         run: |
           echo "date=$(date +%Y-%m-%d)" >> $GITHUB_OUTPUT
 
-      - name: Build Image
+      - name: Build image
         id: build
         uses: redhat-actions/buildah-build@v2
         with:
@@ -36,7 +36,7 @@ jobs:
             ${{ steps.vars.outputs.date }}
           oci: true
 
-      - name: Push To GHCR
+      - name: Push to ghcr
         uses: redhat-actions/push-to-registry@v2
         id: push
         with:
