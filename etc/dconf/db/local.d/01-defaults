@@ -1,2 +1,6 @@
-[org/gnome/software] 
+[org/gnome/software]
 download-updates = true
+
+[org/gnome/desktop/background]
+picture-uri = 'file:///usr/share/backgrounds/gnome/blobs-l.svg'
+picture-uri-dark = 'file:///usr/share/backgrounds/gnome/blobs-d.svg'
