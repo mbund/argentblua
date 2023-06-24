@@ -10,6 +10,7 @@ RUN rpm-ostree install tailscale
 
 RUN rpm-ostree install gnome-tweaks
 RUN rpm-ostree install codium
+RUN rpm-ostree install fish
 RUN rpm-ostree install powertop
 RUN rpm-ostree install iotop
 RUN rpm-ostree install podman-compose podman-docker podman-plugins podman-tui dbus-x11
@@ -25,4 +26,5 @@ COPY --from=cgr.dev/chainguard/cosign:latest /usr/bin/cosign /usr/bin/cosign
 RUN sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=15s/' /etc/systemd/user.conf
 RUN sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=15s/' /etc/systemd/system.conf
 
+RUN rm -rf /tmp/* /var/*
 RUN ostree container commit
