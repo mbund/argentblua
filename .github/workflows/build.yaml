@@ -1,9 +1,9 @@
 name: build-argentblua
 on:
-  pull_request:
   schedule:
-    - cron: '0 8 * * *' # daily at 8:00 (UTC)
+    - cron: "0 8 * * *" # daily at 8:00 (UTC)
   push:
+  workflow_dispatch:
 
 jobs:
   push-ghcr:
