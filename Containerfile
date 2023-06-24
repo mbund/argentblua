@@ -1,9 +1,10 @@
-FROM quay.io/fedora-ostree-desktops/silverblue:37
+FROM quay.io/fedora-ostree-desktops/silverblue:38
 
 COPY etc /etc
 
-RUN rpm-ostree override remove firefox firefox-langpacks && \
-    rpm-ostree install gnome-tweaks && \
-    sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && \
-    systemctl enable rpm-ostreed-automatic.timer && \
-    ostree container commit
+RUN rpm-ostree install gnome-tweaks
+
+RUN systemctl enable rpm-ostreed-automatic.timer
+RUN systemctl enable tailscaled.service
+
+RUN ostree container commit
