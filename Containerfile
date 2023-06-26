@@ -1,6 +1,6 @@
 FROM quay.io/fedora-ostree-desktops/silverblue:38
 
-RUN echo "root:x:0:0:root:/var/root:/bin/bash" > /etc/passwd
+RUN echo "root:x:0:0:root:/usr/root:/bin/bash" > /etc/passwd
 
 # COPY etc /etc
 
@@ -34,5 +34,5 @@ RUN sh <(curl -L https://nixos.org/nix/install) --daemon --no-channel-add
 
 # RUN systemctl enable sshd.service
 
-RUN rm -rf /tmp/* /var/*
+# RUN rm -rf /tmp/* /var/*
 RUN ostree container commit
