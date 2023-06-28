@@ -16,7 +16,7 @@ RUN rpm-ostree install podman-compose podman-docker podman-plugins podman-tui db
 RUN rpm-ostree install qemu qemu-user-static qemu-user-binfmt virt-manager libvirt qemu qemu-user-static qemu-user-binfmt edk2-ovmf
 RUN rpm-ostree install cockpit-bridge cockpit-doc cockpit-kdump cockpit-networkmanager cockpit-packagekit cockpit-pcp cockpit-selinux cockpit-sosreport cockpit-storaged cockpit-system cockpit-tests cockpit-ostree cockpit-podman cockpit-machines libvirt-client libvirt-dbus tuned-utils virt-install
 RUN rpm-ostree install adw-gtk3-theme papirus-icon-theme
-RUN rpm-ostree install gnome-tweaks
+RUN rpm-ostree install gnome-tweaks gparted
 RUN rpm-ostree install libgda libgda-sqlite
 RUN rpm-ostree install p7zip p7zip-plugins
 RUN rpm-ostree install codium fish gh
