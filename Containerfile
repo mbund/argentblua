@@ -2,9 +2,12 @@ FROM quay.io/fedora-ostree-desktops/silverblue:38
 
 RUN echo "root:x:0:0:root:/usr/root:/bin/bash" > /etc/passwd
 
-# COPY etc /etc
+COPY etc /etc
 
-RUN sh <(curl -L https://nixos.org/nix/install) --daemon --no-channel-add
+RUN /etc/nix-install.sh
+# RUN sh <(curl -L https://nixos.org/nix/install) --daemon --yes --no-channel-add
+
+RUN nix --version
 
 # RUN systemctl enable rpm-ostreed-automatic.timer
 # RUN systemctl enable dconf-update.service
