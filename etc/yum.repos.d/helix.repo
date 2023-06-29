@@ -1,0 +1,10 @@
+[copr:copr.fedorainfracloud.org:varlad:helix]
+name=Copr repo for helix owned by varlad
+baseurl=https://download.copr.fedorainfracloud.org/results/varlad/helix/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/varlad/helix/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
