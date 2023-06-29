@@ -21,6 +21,11 @@ RUN rpm-ostree install libgda libgda-sqlite
 RUN rpm-ostree install p7zip p7zip-plugins
 RUN rpm-ostree install codium fish gh
 RUN rpm-ostree install powertop iotop
+COPY --from=cgr.dev/chainguard/kubectl:latest /usr/bin/kubectl /usr/bin/kubectl
+COPY --from=cgr.dev/chainguard/helm:latest /usr/bin/helm /usr/bin/helm
+COPY --from=cgr.dev/chainguard/cosign:latest /usr/bin/cosign /usr/bin/cosign
+COPY --from=cgr.dev/chainguard/terraform:latest /usr/bin/terraform /usr/bin/terraform
+RUN curl -s https://cdn.teleport.dev/teleport-v13.1.2-linux-amd64-bin.tar.gz | tar -xzf - --strip-components=1 -C /usr/bin teleport/tsh teleport/teleport
 
 RUN rm -rf /tmp/* /var/*
 RUN ostree container commit
