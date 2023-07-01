@@ -28,5 +28,9 @@ COPY --from=cgr.dev/chainguard/cosign:latest /usr/bin/cosign /usr/bin/cosign
 COPY --from=cgr.dev/chainguard/terraform:latest /usr/bin/terraform /usr/bin/terraform
 RUN curl -s https://cdn.teleport.dev/teleport-v13.1.2-linux-amd64-bin.tar.gz | tar -xzf - --strip-components=1 -C /usr/bin teleport/tsh
 
+RUN rpm-ostree install tlp tlp-rdw stress-ng
+RUN rpm-ostree override remove power-profiles-daemon
+RUN systemctl enable tlp
+
 RUN rm -rf /tmp/* /var/*
 RUN ostree container commit
