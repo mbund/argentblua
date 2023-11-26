@@ -24,7 +24,6 @@ RUN rpm-ostree install libgda libgda-sqlite
 RUN rpm-ostree install p7zip p7zip-plugins
 RUN rpm-ostree install codium fish gh direnv
 RUN rpm-ostree install powertop iotop btop
-RUN rpm-ostree install bat exa git-delta duf helix ripgrep procs httpie zoxide
 COPY --from=cgr.dev/chainguard/kubectl:latest /usr/bin/kubectl /usr/bin/kubectl
 COPY --from=cgr.dev/chainguard/helm:latest /usr/bin/helm /usr/bin/helm
 COPY --from=cgr.dev/chainguard/cosign:latest /usr/bin/cosign /usr/bin/cosign
