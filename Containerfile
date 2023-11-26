@@ -21,7 +21,5 @@ RUN rpm-ostree install adw-gtk3-theme papirus-icon-theme
 RUN rpm-ostree install gnome-tweaks gparted
 RUN rpm-ostree install powertop iotop
 
-RUN rpm-ostree kargs --append="module_blacklist=hid_sensor_hub"
-
 RUN rm -rf /tmp/* /var/*
 RUN ostree container commit
