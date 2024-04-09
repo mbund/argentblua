@@ -15,7 +15,7 @@ RUN rpm-ostree install podman-compose podman-docker podman-tui dbus-x11
 RUN rpm-ostree install qemu qemu-user-static qemu-user-binfmt virt-manager libvirt qemu qemu-user-static qemu-user-binfmt edk2-ovmf
 RUN rpm-ostree install adw-gtk3-theme papirus-icon-theme
 RUN rpm-ostree install gnome-tweaks gparted
-RUN rpm-ostree install fish powertop iotop
+RUN rpm-ostree install powertop iotop
 
 RUN rm -rf /tmp/* /var/*
 RUN ostree container commit
