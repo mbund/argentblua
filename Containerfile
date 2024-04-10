@@ -15,6 +15,7 @@ RUN rpm-ostree install dbus-x11 qemu qemu-user-static qemu-user-binfmt virt-mana
 RUN rpm-ostree install adw-gtk3-theme papirus-icon-theme
 RUN rpm-ostree install gnome-tweaks gparted
 RUN rpm-ostree install powertop iotop
+RUN rpm-ostree install fish alacritty
 
 RUN rm -rf /tmp/* /var/*
 RUN ostree container commit
