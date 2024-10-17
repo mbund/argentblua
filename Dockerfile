@@ -2,7 +2,7 @@ FROM quay.io/fedora/fedora-silverblue:41
 
 RUN rpm-ostree install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 RUN rpm-ostree install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-RUN rpm-ostree uninstall ffmpeg-free
+RUN rpm-ostree uninstall ffmpeg-free libavcodec-free libavdevice-free libavfilter-free libavformat-free libavutil-free libpostproc-free libswresample-free libswscale-free
 RUN rpm-ostree install ffmpeg intel-media-driver
 
 COPY etc /etc
