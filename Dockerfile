@@ -12,9 +12,9 @@ RUN rpm-ostree install waydroid
 RUN systemctl enable waydroid-container.service
 
 # add rpm fusion
-RUN rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# RUN rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # install codecs for h.264 and va-api
-RUN rpm-ostree install ffmpeg-free libavcodec-freeworld intel-media-driver
+# RUN rpm-ostree install ffmpeg-free libavcodec-freeworld intel-media-driver
 
 RUN rpm-ostree install dbus-x11 qemu qemu-user-static qemu-user-binfmt virt-manager libvirt qemu qemu-user-static qemu-user-binfmt edk2-ovmf
 RUN rpm-ostree install adw-gtk3-theme papirus-icon-theme
