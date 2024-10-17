@@ -1,6 +1,8 @@
 FROM quay.io/fedora-ostree-desktops/silverblue:40
 
-RUN rpm-ostree install gstreamer1-plugin-openh264 mozilla-openh264
+RUN rpm-ostree install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+RUN rpm-ostree install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+RUN rpm-ostree install ffmpeg gstreamer1-plugin-openh264 mozilla-openh264
 
 COPY etc /etc
 
