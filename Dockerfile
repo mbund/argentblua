@@ -1,4 +1,4 @@
-FROM quay.io/fedora/fedora-silverblue:41
+FROM quay.io/fedora/fedora-kinoite:41
 
 RUN rpm-ostree install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 RUN rpm-ostree install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
