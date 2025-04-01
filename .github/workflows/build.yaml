@@ -34,7 +34,7 @@ jobs:
           REPO_NAME=$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')
           docker build \
             --tag ghcr.io/$REPO_NAME/${{ github.event.repository.name }}:${{ steps.vars.outputs.date }} \
-            --tag ghcr.io/$REPO_NAME//${{ github.event.repository.name }}:latest \
+            --tag ghcr.io/$REPO_NAME/${{ github.event.repository.name }}:latest \
             .
 
       - name: Push to ghcr
