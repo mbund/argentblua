@@ -18,5 +18,5 @@ The following are installed/configured
 Rebase a normal installation of [Fedora Silverblue](https://silverblue.fedoraproject.org).
 
 ```
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/mbund/argentblua:latest
+sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/rebelandroid/argentblua:latest
 ```
