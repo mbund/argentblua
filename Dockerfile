@@ -13,6 +13,8 @@ COPY etc /etc
 RUN rpm-ostree install tailscale
 RUN systemctl enable tailscaled.service
 
+RUN rpm-ostree install sway
+
 #RUN rpm-ostree install waydroid
 #RUN systemctl enable waydroid-container.service
 
