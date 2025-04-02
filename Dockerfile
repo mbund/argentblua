@@ -1,4 +1,4 @@
-FROM quay.io/fedora/fedora-coreos:41
+FROM ghcr.io/ublue-os/ucore:stable-nvidia
 
 RUN rpm-ostree install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 RUN rpm-ostree install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
