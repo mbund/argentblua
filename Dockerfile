@@ -23,7 +23,7 @@ RUN systemctl enable waydroid-container.service
 
 RUN rpm-ostree install dbus-x11 qemu qemu-user-static qemu-user-binfmt virt-manager libvirt qemu qemu-user-static qemu-user-binfmt edk2-ovmf
 RUN rpm-ostree install adw-gtk3-theme papirus-icon-theme
-RUN rpm-ostree install gnome-tweaks gparted evolution
+RUN rpm-ostree install gnome-tweaks gparted evolution evolution-ews
 RUN rpm-ostree install powertop iotop
 RUN rpm-ostree install docker-ce
 RUN rpm-ostree install fish alacritty
