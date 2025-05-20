@@ -40,4 +40,4 @@ jobs:
       - name: Push to ghcr
         run: |
           docker push ghcr.io/${{steps.vars.outputs.repo}}/${{ github.event.repository.name }}:${{ steps.vars.outputs.date }}
-          docker push ghcr.io/${{steps.repo.outputs.repo}}/${{ github.event.repository.name }}:latest
+          docker push ghcr.io/${{steps.vars.outputs.repo}}/${{ github.event.repository.name }}:latest
