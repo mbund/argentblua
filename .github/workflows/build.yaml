@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: repo-name
         id: repo
-        run: echo "repo=$(${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+        run: echo "repo=$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
 
       - name: Checkout
         uses: actions/checkout@v3
