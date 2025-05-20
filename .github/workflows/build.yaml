@@ -12,7 +12,7 @@ jobs:
     permissions:
       contents: read
       packages: write
-      id-token: write    
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -33,11 +33,11 @@ jobs:
       - name: Build image
         run: |
           docker build \
-            --tag ghcr.io/${{steps.vars.outputs.repo}}/${{ github.event.repository.name }}:${{ steps.vars.outputs.date }} \
-            --tag ghcr.io/${{steps.vars.outputs.repo}}/${{ github.event.repository.name }}:latest \
+            --tag ghcr.io/${{ steps.vars.outputs.repo }}/${{ github.event.repository.name }}:${{ steps.vars.outputs.date }} \
+            --tag ghcr.io/${{ steps.vars.outputs.repo }}/${{ github.event.repository.name }}:latest \
             .
 
       - name: Push to ghcr
         run: |
-          docker push ghcr.io/${{steps.vars.outputs.repo}}/${{ github.event.repository.name }}:${{ steps.vars.outputs.date }}
-          docker push ghcr.io/${{steps.vars.outputs.repo}}/${{ github.event.repository.name }}:latest
+          docker push ghcr.io/${{ steps.vars.outputs.repo }}/${{ github.event.repository.name }}:${{ steps.vars.outputs.date }}
+          docker push ghcr.io/${{ steps.vars.outputs.repo }}/${{ github.event.repository.name }}:latest
